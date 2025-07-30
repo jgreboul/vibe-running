@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "2804bfc5-ead8-45dd-93fb-9c5b7d0d5645",
+		"name": "Vibe-Running",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35943866"
+	},
+	"item": [
+		{
+			"name": "01. Upload Runs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "postman-cloud:///1f0284e4-7499-4490-8382-e52402a28383"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/upload_run",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"upload_run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. Set Location",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/set_location",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"set_location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. Set Location (with Geocoded Locations)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"geocoded_locations\": [\r\n        {\r\n            \"latitude\": 47.6038321,\r\n            \"location\": \"Seattle, WA, USA\",\r\n            \"longitude\": -122.330062\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/set_location",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"set_location"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Generate Map (SVG)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/generate_map?format=svg",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"generate_map"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "svg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Generate Map (SVGs)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/generate_map?format=svgs",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"generate_map"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "svgs"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Generate Map (MKV)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/generate_map?format=mkv&duration=60",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"generate_map"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "mkv"
+						},
+						{
+							"key": "duration",
+							"value": "60"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
